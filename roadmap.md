@@ -1,4 +1,4 @@
-- [ ] Build animated MLSC event introduction and roadmap
-- [ ] Build six individual event pages with supplied photos
-- [ ] Add image-9 through image-15 to the Datathon photo set as requested
-- [ ] Verify desktop and mobile interactions
+- [x] Animated mascot opening page
+- [x] Event roadmap with six milestones and scroll-following mascot
+- [x] Six event pages with photo galleries (Datathon includes the new photos)
+- [ ] Add real event write-ups and the footer content when supplied
