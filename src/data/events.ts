@@ -100,7 +100,7 @@ export const events: EventItem[] = [
     about:
       "Add the Datathon description here — the problem statements, the datasets, and how the teams competed.",
     highlights: ["Problem statements", "Team analysis", "Live leaderboard"],
-    photos: [p9.url, p10.url, p11.url, p12.url, p13.url, p14.url, p15.url],
+    photos: [p9.url, p10.url],
   },
   {
     slug: "code-sprint",
@@ -115,7 +115,7 @@ export const events: EventItem[] = [
     about:
       "Add the Code Sprint description here — the rounds, the difficulty curve, and the winners.",
     highlights: ["Timed rounds", "Algorithm duels", "Sprint winners"],
-    photos: [],
+    photos: [p11.url, p12.url],
   },
   {
     slug: "bluebit-hackathon",
@@ -130,7 +130,7 @@ export const events: EventItem[] = [
     about:
       "Add the Bluebit Hackathon description here — the themes, the mentors, the final pitches, and the winning teams.",
     highlights: ["Overnight build", "Mentor rounds", "Final pitches"],
-    photos: [],
+    photos: [p13.url, p14.url, p15.url],
   },
 ];
 

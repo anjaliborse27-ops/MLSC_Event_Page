@@ -53,8 +53,8 @@ function Roadmap() {
       if (!el) return;
       const r = el.getBoundingClientRect();
       const vh = window.innerHeight;
-      const total = r.height + vh * 0.5;
-      const p = (vh * 0.75 - r.top) / total;
+      const total = Math.max(1, r.height - vh * 0.35);
+      const p = (vh * 0.6 - r.top) / total;
       setProgress(Math.min(1, Math.max(0, p)));
     };
     onScroll();
