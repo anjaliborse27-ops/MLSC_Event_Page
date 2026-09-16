@@ -73,7 +73,7 @@ function Roadmap() {
   const from = NODES[i]!;
   const to = NODES[i + 1]!;
   const mx = from.x + (to.x - from.x) * ease;
-  const my = from.y + (to.y - from.y) * t;
+  const my = from.y + (to.y - from.y) * ease;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
