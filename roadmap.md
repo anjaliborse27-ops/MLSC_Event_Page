@@ -1,0 +1,4 @@
+- [ ] Build animated MLSC event introduction and roadmap
+- [ ] Build six individual event pages with supplied photos
+- [ ] Add image-9 through image-15 to the Datathon photo set as requested
+- [ ] Verify desktop and mobile interactions
