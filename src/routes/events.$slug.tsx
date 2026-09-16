@@ -126,16 +126,6 @@ function EventPage() {
               />
             </figure>
           ))}
-          {Array.from({ length: Math.max(0, 3 - event.photos.length) }).map((_, i) => (
-            <div
-              key={`ph-${i}`}
-              className="mb-4 flex h-52 break-inside-avoid items-center justify-center rounded-2xl border border-dashed border-border/70 glass"
-            >
-              <p className="font-mono text-[9px] uppercase tracking-[0.4em] text-muted-foreground">
-                Photo space
-              </p>
-            </div>
-          ))}
         </div>
       </section>
 
