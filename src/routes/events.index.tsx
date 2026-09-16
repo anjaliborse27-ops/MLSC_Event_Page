@@ -32,10 +32,11 @@ const NODES = events.map((e, i) => ({
 const VIEW_H = 70 + (events.length - 1) * 92 + 70;
 
 function buildPath() {
-  let d = `M ${NODES[0].x} ${NODES[0].y}`;
+  const first = NODES[0]!;
+  let d = `M ${first.x} ${first.y}`;
   for (let i = 1; i < NODES.length; i++) {
-    const a = NODES[i - 1];
-    const b = NODES[i];
+    const a = NODES[i - 1]!;
+    const b = NODES[i]!;
     const mid = (a.y + b.y) / 2;
     d += ` C ${a.x} ${mid}, ${b.x} ${mid}, ${b.x} ${b.y}`;
   }
@@ -69,8 +70,10 @@ function Roadmap() {
   const i = Math.min(NODES.length - 2, Math.floor(seg));
   const t = seg - i;
   const ease = t * t * (3 - 2 * t);
-  const mx = NODES[i].x + (NODES[i + 1].x - NODES[i].x) * ease;
-  const my = NODES[i].y + (NODES[i + 1].y - NODES[i].y) * t;
+  const from = NODES[i]!;
+  const to = NODES[i + 1]!;
+  const mx = from.x + (to.x - from.x) * ease;
+  const my = from.y + (to.y - from.y) * t;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
@@ -149,7 +152,7 @@ function Roadmap() {
               to="/events/$slug"
               params={{ slug: ev.slug }}
               className="node-hover absolute z-10 -translate-x-1/2 -translate-y-1/2"
-              style={{ left: `${NODES[idx].x}%`, top: `${(NODES[idx].y / VIEW_H) * 100}%` }}
+              style={{ left: `${NODES[idx]!.x}%`, top: `${(NODES[idx]!.y / VIEW_H) * 100}%` }}
             >
               <div className="node-art flex flex-col items-center gap-3 transition-transform duration-300">
                 <div

@@ -33,7 +33,7 @@ export const Route = createFileRoute("/events/$slug")({
 function EventPage() {
   const { event } = Route.useLoaderData();
   const accent = accentVar[event.accent];
-  const next = events[event.index % events.length];
+  const next = events[event.index % events.length]!;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
