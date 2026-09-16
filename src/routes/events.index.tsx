@@ -97,7 +97,7 @@ function Roadmap() {
       />
 
       <div ref={trackRef} className="relative mx-auto mt-16 w-full max-w-4xl px-4 sm:px-8">
-        <div className="relative" style={{ aspectRatio: `100 / ${VIEW_H}` }}>
+        <div className="relative h-[1150px] sm:h-[1500px]">
           <svg
             viewBox={`0 0 100 ${VIEW_H}`}
             preserveAspectRatio="none"
