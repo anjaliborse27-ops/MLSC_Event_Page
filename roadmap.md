@@ -1,4 +1,9 @@
 - [x] Animated mascot opening page
 - [x] Event roadmap with six milestones and scroll-following mascot
-- [x] Six event pages with photo galleries (Datathon includes the new photos)
-- [ ] Add real event write-ups and the footer content when supplied
+- [x] Six event pages with photo galleries
+- [ ] Rewrite all event text so it reads hand-written, better arranged
+- [ ] Glass surfaces and moving belt text at the right moments
+- [ ] Guide reaches the final milestone smoothly, natural timing
+- [ ] Remove gaps/blank space in photo galleries
+- [ ] Verify photo order per event (Datathon, Code Sprint, Bluebit)
+- [ ] Add real event write-ups and footer content when supplied

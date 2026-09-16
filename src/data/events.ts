@@ -27,10 +27,14 @@ export type EventItem = {
   accent: "red" | "green" | "blue" | "yellow";
   mascot: string;
   mascotAnim: string;
+  floatDuration: string;
+  floatDelay: string;
   quote: string;
   intro: string;
   about: string;
-  highlights: string[];
+  note: string;
+  highlights: { title: string; line: string }[];
+  belt: string[];
   photos: string[];
 };
 
@@ -46,30 +50,46 @@ export const events: EventItem[] = [
     slug: "mlsc-inauguration",
     index: 1,
     name: "MLSC Inauguration",
-    tag: "The beginning",
+    tag: "Where it started",
     accent: "blue",
     mascot: mascotWave,
     mascotAnim: "animate-float-soft",
-    quote: "Every community starts with one open door.",
-    intro: "The day the chapter opened its wings.",
+    floatDuration: "7.4s",
+    floatDelay: "-1.1s",
+    quote: "A chapter is only a name until people show up for it.",
+    intro: "The morning our chapter stopped being an idea.",
     about:
-      "Add the story of the inauguration here — the welcome, the first address, and how the chapter was introduced to the campus. This space is ready for your final write-up.",
-    highlights: ["Chapter launch", "Welcome address", "First member meet"],
+      "This is the day the chapter opened its doors at PCCOE. A hall, a handful of nervous introductions, and a team that had spent weeks preparing for one hour. By the time it ended, people who had never spoken to each other were already arguing about what to build next.",
+    note: "Write-up in progress — the team is still collecting notes from that day.",
+    highlights: [
+      { title: "Chapter launch", line: "The first official word from MLSC PCCOE." },
+      { title: "Welcome address", line: "Why the chapter exists, said out loud." },
+      { title: "First member meet", line: "Names, laptops, and a lot of curiosity." },
+    ],
+    belt: ["Day one", "Open doors", "First hello", "MLSC PCCOE"],
     photos: [p1.url, p2.url, p3.url],
   },
   {
     slug: "tech-room",
     index: 2,
     name: "Tech Room",
-    tag: "Hands on",
+    tag: "Hands on the keys",
     accent: "green",
     mascot: mascotLaptop,
     mascotAnim: "animate-float-soft",
-    quote: "A room is just a room until someone starts building in it.",
-    intro: "Where curiosity turned into keyboards.",
+    floatDuration: "6.2s",
+    floatDelay: "-2.6s",
+    quote: "A room is just a room until somebody starts building in it.",
+    intro: "Fewer slides. More keyboards.",
     about:
-      "Add the Tech Room description here — what was taught, who led it, and what participants walked away with.",
-    highlights: ["Hands-on lab", "Peer mentoring", "Live builds"],
+      "Tech Room was the session where nobody stayed in the audience for long. Seniors sat next to first years, screens got turned around, and the questions got better as the evening went on. Most people left with something half-built and a reason to finish it.",
+    note: "Write-up in progress — session notes coming from the mentors.",
+    highlights: [
+      { title: "Hands-on lab", line: "Everyone had a machine and something running." },
+      { title: "Peer mentoring", line: "Seniors walking rows, not lecturing." },
+      { title: "Live builds", line: "Started in the room, finished at home." },
+    ],
+    belt: ["Build", "Break", "Ask", "Build again"],
     photos: [p4.url, p5.url],
   },
   {
@@ -80,11 +100,19 @@ export const events: EventItem[] = [
     accent: "yellow",
     mascot: mascotBook,
     mascotAnim: "animate-float-soft",
-    quote: "Knowledge earns its worth the moment it is practised.",
-    intro: "Theory stepped aside and practice took the stage.",
+    floatDuration: "8.1s",
+    floatDelay: "-0.4s",
+    quote: "Knowledge earns its worth the moment somebody uses it.",
+    intro: "Theory stepped aside and practice took the chair.",
     about:
-      "Add the Praxis description here — the sessions, the mentors, and the skills the participants practised.",
-    highlights: ["Guided sessions", "Skill drills", "Mentor feedback"],
+      "Praxis was built around one rule: whatever gets explained has to get attempted the same day. The sessions ran long because people kept asking for one more round, and the mentors kept saying yes.",
+    note: "Write-up in progress — the session list is being finalised.",
+    highlights: [
+      { title: "Guided sessions", line: "Explained once, attempted immediately." },
+      { title: "Skill drills", line: "Short rounds, repeated until they stuck." },
+      { title: "Mentor feedback", line: "Blunt, useful, in person." },
+    ],
+    belt: ["Learn it", "Try it", "Get it wrong", "Try again"],
     photos: [p6.url, p7.url, p8.url],
   },
   {
@@ -95,11 +123,19 @@ export const events: EventItem[] = [
     accent: "red",
     mascot: mascotLaptop,
     mascotAnim: "animate-float-soft",
-    quote: "Numbers whisper. Teams that listen, win.",
-    intro: "Raw data, sharp minds, one clock.",
+    floatDuration: "5.6s",
+    floatDelay: "-3.2s",
+    quote: "Numbers whisper. The teams that listen are the ones that win.",
+    intro: "Raw data, sharp minds, one clock running.",
     about:
-      "Add the Datathon description here — the problem statements, the datasets, and how the teams competed.",
-    highlights: ["Problem statements", "Team analysis", "Live leaderboard"],
+      "Datathon handed every team the same messy dataset and a deadline that did not move. The lab stayed loud for hours — half the room debugging, half the room defending a chart nobody else believed yet.",
+    note: "Write-up in progress — problem statements and results being compiled.",
+    highlights: [
+      { title: "Problem statements", line: "Same data, six different readings." },
+      { title: "Team analysis", line: "Arguing over the number until it made sense." },
+      { title: "Final presentations", line: "Five minutes to defend the whole day." },
+    ],
+    belt: ["Clean it", "Question it", "Chart it", "Defend it"],
     photos: [p9.url, p10.url],
   },
   {
@@ -110,26 +146,42 @@ export const events: EventItem[] = [
     accent: "green",
     mascot: mascotFly,
     mascotAnim: "animate-float-soft",
-    quote: "Fast hands, calm head, clean code.",
+    floatDuration: "4.8s",
+    floatDelay: "-1.9s",
+    quote: "Fast hands, calm head, clean code. Pick all three.",
     intro: "A sprint measured in commits, not metres.",
     about:
-      "Add the Code Sprint description here — the rounds, the difficulty curve, and the winners.",
-    highlights: ["Timed rounds", "Algorithm duels", "Sprint winners"],
+      "Code Sprint was the shortest event and the loudest one. Timed rounds, rising difficulty, and a scoreboard that changed often enough to keep everyone leaning forward. Nobody checked their phone once.",
+    note: "Write-up in progress — round details and winners to be added.",
+    highlights: [
+      { title: "Timed rounds", line: "The clock did most of the talking." },
+      { title: "Algorithm duels", line: "Two approaches, one that survives." },
+      { title: "Sprint winners", line: "Decided in the final minutes." },
+    ],
+    belt: ["Ready", "Set", "Commit", "Repeat"],
     photos: [p11.url, p12.url],
   },
   {
     slug: "bluebit-hackathon",
     index: 6,
     name: "Bluebit Hackathon",
-    tag: "The finale",
+    tag: "The long night",
     accent: "blue",
     mascot: mascotFly,
     mascotAnim: "animate-float-soft",
-    quote: "Build through the night, ship before the sun.",
-    intro: "The longest night and the loudest finish.",
+    floatDuration: "9s",
+    floatDelay: "-4.5s",
+    quote: "Build through the night. Ship before the sun does.",
+    intro: "The longest night of the year, and the loudest finish.",
     about:
-      "Add the Bluebit Hackathon description here — the themes, the mentors, the final pitches, and the winning teams.",
-    highlights: ["Overnight build", "Mentor rounds", "Final pitches"],
+      "Bluebit was the one everything else had been building towards. Teams took over the floor overnight, mentors moved table to table, and by morning the pitches were rough, honest and a lot better than anyone expected at 3 a.m.",
+    note: "Write-up in progress — themes, mentors and winning teams to be added.",
+    highlights: [
+      { title: "Overnight build", line: "Lights on from evening to sunrise." },
+      { title: "Mentor rounds", line: "Hard questions, table by table." },
+      { title: "Final pitches", line: "Tired teams, finished products." },
+    ],
+    belt: ["All night", "One idea", "Ship it", "Bluebit"],
     photos: [p13.url, p14.url, p15.url],
   },
 ];
