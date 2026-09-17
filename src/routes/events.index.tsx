@@ -32,15 +32,40 @@ const NODES = events.map((e, i) => ({
 const VIEW_H = 70 + (events.length - 1) * 92 + 70;
 
 function buildPath() {
-  const first = NODES[0]!;
+  const first = NODES[0];
+  if (!first) return "";
   let d = `M ${first.x} ${first.y}`;
   for (let i = 1; i < NODES.length; i++) {
-    const a = NODES[i - 1]!;
-    const b = NODES[i]!;
+    const a = NODES[i - 1];
+    const b = NODES[i];
+    if (!a || !b) continue;
     const mid = (a.y + b.y) / 2;
     d += ` C ${a.x} ${mid}, ${b.x} ${mid}, ${b.x} ${b.y}`;
   }
   return d;
+}
+
+function pointOnPath(progress: number) {
+  const segment = progress * (NODES.length - 1);
+  const index = Math.min(NODES.length - 2, Math.floor(segment));
+  const t = Math.min(1, segment - index);
+  const from = NODES[index] ?? NODES[0] ?? { x: 0, y: 0 };
+  const to = NODES[index + 1] ?? from;
+  const middleY = (from.y + to.y) / 2;
+  const inverse = 1 - t;
+
+  return {
+    x:
+      inverse ** 3 * from.x +
+      3 * inverse ** 2 * t * from.x +
+      3 * inverse * t ** 2 * to.x +
+      t ** 3 * to.x,
+    y:
+      inverse ** 3 * from.y +
+      3 * inverse ** 2 * t * middleY +
+      3 * inverse * t ** 2 * middleY +
+      t ** 3 * to.y,
+  };
 }
 
 function Roadmap() {
@@ -53,8 +78,11 @@ function Roadmap() {
       if (!el) return;
       const r = el.getBoundingClientRect();
       const vh = window.innerHeight;
-      const total = Math.max(1, r.height - vh * 0.35);
-      const p = (vh * 0.6 - r.top) / total;
+      const firstNode = (NODES[0]?.y ?? 0) / VIEW_H;
+      const lastNode = (NODES.at(-1)?.y ?? VIEW_H) / VIEW_H;
+      const start = r.top + r.height * firstNode;
+      const finish = r.top + r.height * lastNode;
+      const p = (vh * 0.58 - start) / Math.max(1, finish - start);
       setProgress(Math.min(1, Math.max(0, p)));
     };
     onScroll();
@@ -66,14 +94,7 @@ function Roadmap() {
     };
   }, []);
 
-  const seg = progress * (NODES.length - 1);
-  const i = Math.min(NODES.length - 2, Math.floor(seg));
-  const t = seg - i;
-  const ease = t * t * (3 - 2 * t);
-  const from = NODES[i]!;
-  const to = NODES[i + 1]!;
-  const mx = from.x + (to.x - from.x) * ease;
-  const my = from.y + (to.y - from.y) * ease;
+  const guidePoint = pointOnPath(progress);
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
@@ -133,8 +154,8 @@ function Roadmap() {
           </svg>
 
           <div
-            className="pointer-events-none absolute z-20 -translate-x-1/2 -translate-y-1/2 transition-[left,top] duration-300 ease-out"
-            style={{ left: `${mx}%`, top: `${(my / VIEW_H) * 100}%` }}
+            className="pointer-events-none absolute z-20 -translate-x-1/2 -translate-y-1/2 transition-[left,top] duration-150 ease-out"
+            style={{ left: `${guidePoint.x}%`, top: `${(guidePoint.y / VIEW_H) * 100}%` }}
             aria-hidden="true"
           >
             <img
@@ -143,6 +164,7 @@ function Roadmap() {
               width={1024}
               height={1024}
               className="animate-float-soft h-16 w-16 object-contain drop-shadow-[0_10px_24px_rgba(0,0,0,0.7)] sm:h-24 sm:w-24"
+              style={{ animationDuration: "7.2s", animationDelay: "-2.3s" }}
             />
           </div>
 
@@ -152,7 +174,10 @@ function Roadmap() {
               to="/events/$slug"
               params={{ slug: ev.slug }}
               className="node-hover absolute z-10 -translate-x-1/2 -translate-y-1/2"
-              style={{ left: `${NODES[idx]!.x}%`, top: `${(NODES[idx]!.y / VIEW_H) * 100}%` }}
+              style={{
+                left: `${NODES[idx]?.x ?? 0}%`,
+                top: `${((NODES[idx]?.y ?? 0) / VIEW_H) * 100}%`,
+              }}
             >
               <div className="node-art flex flex-col items-center gap-3 transition-transform duration-300">
                 <div
