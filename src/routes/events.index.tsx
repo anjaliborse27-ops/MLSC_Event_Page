@@ -82,7 +82,8 @@ function Roadmap() {
       const lastNode = (NODES.at(-1)?.y ?? VIEW_H) / VIEW_H;
       const start = r.top + r.height * firstNode;
       const finish = r.top + r.height * lastNode;
-      const p = (vh * 0.58 - start) / Math.max(1, finish - start);
+      const atPageEnd = window.scrollY + vh >= document.documentElement.scrollHeight - 2;
+      const p = atPageEnd ? 1 : (vh * 0.58 - start) / Math.max(1, finish - start);
       setProgress(Math.min(1, Math.max(0, p)));
     };
     onScroll();
