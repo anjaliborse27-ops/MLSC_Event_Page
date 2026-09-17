@@ -3,21 +3,21 @@ import mascotLaptop from "@/assets/mascot-laptop.png";
 import mascotFly from "@/assets/mascot-fly.png";
 import mascotBook from "@/assets/mascot-book.png";
 
-import p1 from "@/assets/image.png.asset.json";
-import p2 from "@/assets/image-2.png.asset.json";
-import p3 from "@/assets/image-3.png.asset.json";
-import p4 from "@/assets/image-4.png.asset.json";
-import p5 from "@/assets/image-5.png.asset.json";
-import p6 from "@/assets/image-6.png.asset.json";
-import p7 from "@/assets/image-7.png.asset.json";
-import p8 from "@/assets/image-8.png.asset.json";
-import p9 from "@/assets/image-9.png.asset.json";
-import p10 from "@/assets/image-10.png.asset.json";
-import p11 from "@/assets/image-11.png.asset.json";
-import p12 from "@/assets/image-12.png.asset.json";
-import p13 from "@/assets/image-13.png.asset.json";
-import p14 from "@/assets/image-14.png.asset.json";
-import p15 from "@/assets/image-15.png.asset.json";
+import p1 from "@/assets/image.png";
+import p2 from "@/assets/image-2.png";
+import p3 from "@/assets/image-3.png";
+import p4 from "@/assets/image-4.png";
+import p5 from "@/assets/image-5.png";
+import p6 from "@/assets/image-6.png";
+import p7 from "@/assets/image-7.png";
+import p8 from "@/assets/image-8.png";
+import p9 from "@/assets/image-9.png";
+import p10 from "@/assets/image-10.png";
+import p11 from "@/assets/image-11.png";
+import p12 from "@/assets/image-12.png";
+import p13 from "@/assets/image-13.png";
+import p14 from "@/assets/image-14.png";
+import p15 from "@/assets/image-15.png";
 
 export type EventItem = {
   slug: string;
