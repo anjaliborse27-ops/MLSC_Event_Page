@@ -67,7 +67,7 @@ export const events: EventItem[] = [
       { title: "First member meet", line: "Names, laptops, and a lot of curiosity." },
     ],
     belt: ["Day one", "Open doors", "First hello", "MLSC PCCOE"],
-    photos: [p1.url, p2.url, p3.url],
+    photos: [p1, p2, p3],
   },
   {
     slug: "tech-room",
@@ -90,7 +90,7 @@ export const events: EventItem[] = [
       { title: "Live builds", line: "Started in the room, finished at home." },
     ],
     belt: ["Build", "Break", "Ask", "Build again"],
-    photos: [p4.url, p5.url],
+    photos: [p4, p5],
   },
   {
     slug: "praxis",
@@ -113,7 +113,7 @@ export const events: EventItem[] = [
       { title: "Mentor feedback", line: "Blunt, useful, in person." },
     ],
     belt: ["Learn it", "Try it", "Get it wrong", "Try again"],
-    photos: [p6.url, p7.url, p8.url],
+    photos: [p6, p7, p8],
   },
   {
     slug: "datathon",
@@ -136,7 +136,7 @@ export const events: EventItem[] = [
       { title: "Final presentations", line: "Five minutes to defend the whole day." },
     ],
     belt: ["Clean it", "Question it", "Chart it", "Defend it"],
-    photos: [p9.url, p10.url],
+    photos: [p9, p10],
   },
   {
     slug: "code-sprint",
@@ -159,7 +159,7 @@ export const events: EventItem[] = [
       { title: "Sprint winners", line: "Decided in the final minutes." },
     ],
     belt: ["Ready", "Set", "Commit", "Repeat"],
-    photos: [p11.url, p12.url],
+    photos: [p11, p12],
   },
   {
     slug: "bluebit-hackathon",
@@ -182,7 +182,7 @@ export const events: EventItem[] = [
       { title: "Final pitches", line: "Tired teams, finished products." },
     ],
     belt: ["All night", "One idea", "Ship it", "Bluebit"],
-    photos: [p13.url, p14.url, p15.url],
+    photos: [p13, p14, p15],
   },
 ];
 
