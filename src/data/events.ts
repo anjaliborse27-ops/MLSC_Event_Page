@@ -3,21 +3,21 @@ import mascotLaptop from "@/assets/mascot-laptop.png";
 import mascotFly from "@/assets/mascot-fly.png";
 import mascotBook from "@/assets/mascot-book.png";
 
-import p1 from "@/assets/image.png.asset.json";
-import p2 from "@/assets/image-2.png.asset.json";
-import p3 from "@/assets/image-3.png.asset.json";
-import p4 from "@/assets/image-4.png.asset.json";
-import p5 from "@/assets/image-5.png.asset.json";
-import p6 from "@/assets/image-6.png.asset.json";
-import p7 from "@/assets/image-7.png.asset.json";
-import p8 from "@/assets/image-8.png.asset.json";
-import p9 from "@/assets/image-9.png.asset.json";
-import p10 from "@/assets/image-10.png.asset.json";
-import p11 from "@/assets/image-11.png.asset.json";
-import p12 from "@/assets/image-12.png.asset.json";
-import p13 from "@/assets/image-13.png.asset.json";
-import p14 from "@/assets/image-14.png.asset.json";
-import p15 from "@/assets/image-15.png.asset.json";
+import p1 from "@/assets/image.png";
+import p2 from "@/assets/image-2.png";
+import p3 from "@/assets/image-3.png";
+import p4 from "@/assets/image-4.png";
+import p5 from "@/assets/image-5.png";
+import p6 from "@/assets/image-6.png";
+import p7 from "@/assets/image-7.png";
+import p8 from "@/assets/image-8.png";
+import p9 from "@/assets/image-9.png";
+import p10 from "@/assets/image-10.png";
+import p11 from "@/assets/image-11.png";
+import p12 from "@/assets/image-12.png";
+import p13 from "@/assets/image-13.png";
+import p14 from "@/assets/image-14.png";
+import p15 from "@/assets/image-15.png";
 
 export type EventItem = {
   slug: string;
@@ -67,7 +67,7 @@ export const events: EventItem[] = [
       { title: "First member meet", line: "Names, laptops, and a lot of curiosity." },
     ],
     belt: ["Day one", "Open doors", "First hello", "MLSC PCCOE"],
-    photos: [p1.url, p2.url, p3.url],
+    photos: [p1, p2, p3],
   },
   {
     slug: "tech-room",
@@ -90,7 +90,7 @@ export const events: EventItem[] = [
       { title: "Live builds", line: "Started in the room, finished at home." },
     ],
     belt: ["Build", "Break", "Ask", "Build again"],
-    photos: [p4.url, p5.url],
+    photos: [p4, p5],
   },
   {
     slug: "praxis",
@@ -113,7 +113,7 @@ export const events: EventItem[] = [
       { title: "Mentor feedback", line: "Blunt, useful, in person." },
     ],
     belt: ["Learn it", "Try it", "Get it wrong", "Try again"],
-    photos: [p6.url, p7.url, p8.url],
+    photos: [p6, p7, p8],
   },
   {
     slug: "datathon",
@@ -136,7 +136,7 @@ export const events: EventItem[] = [
       { title: "Final presentations", line: "Five minutes to defend the whole day." },
     ],
     belt: ["Clean it", "Question it", "Chart it", "Defend it"],
-    photos: [p9.url, p10.url],
+    photos: [p9, p10],
   },
   {
     slug: "code-sprint",
@@ -159,7 +159,7 @@ export const events: EventItem[] = [
       { title: "Sprint winners", line: "Decided in the final minutes." },
     ],
     belt: ["Ready", "Set", "Commit", "Repeat"],
-    photos: [p11.url, p12.url],
+    photos: [p11, p12],
   },
   {
     slug: "bluebit-hackathon",
@@ -182,7 +182,7 @@ export const events: EventItem[] = [
       { title: "Final pitches", line: "Tired teams, finished products." },
     ],
     belt: ["All night", "One idea", "Ship it", "Bluebit"],
-    photos: [p13.url, p14.url, p15.url],
+    photos: [p13, p14, p15],
   },
 ];
 
