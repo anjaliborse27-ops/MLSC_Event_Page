@@ -7,6 +7,7 @@ export function Belt({
   reverse?: boolean;
   className?: string;
 }) {
+  if (items.length === 0) return null;
   const row = [...items, ...items];
 
   return (
