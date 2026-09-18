@@ -1,26 +1,29 @@
-# Pixel Perfect Replica
+# MLSC PCCOE — Event Journey
 
-Implement exactly the screenshot and nothing else
+Plain HTML/CSS/JS pages for the MLSC PCCOE event roadmap — no build step, no framework.
 
-This project was built with [Lovable](https://lovable.dev).
+## Structure
 
-**Live app**: https://pixel-perfect-showcase-3038.lovable.app
+```
+index.html            Landing page
+events.html           Event roadmap
+events/*.html         One page per event
+css/style.css         All styles
+js/main.js            Typewriter, marquee, sparkles, roadmap scroll animation
+assets/images/        Mascots and event photos
+server.js             Minimal Express server for local preview only
+```
 
-## Build with Lovable
+Every page is a self-contained static HTML file. Your team can copy this
+folder straight into the main site and serve it however the other pages are
+served (nginx, Apache, IIS, Netlify, GitHub Pages, etc.) — no Node.js is
+required in production.
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/426abfab-558d-45a2-ae87-2ca46376fedc).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Local preview
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install
+npm start
 ```
+
+Then open http://localhost:3000.
